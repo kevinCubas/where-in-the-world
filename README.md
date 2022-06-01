@@ -17,7 +17,7 @@ To integrate with the [REST Countries API](https://restcountries.com) to pull co
 
 Your users should be able to:
 
-- [ ] See all countries from the API on the homepage
+- [x] See all countries from the API on the homepage
 - [ ] Search for a country using an `input` field
 - [ ] Filter countries by region
 - [ ] Click on a country to see more detailed information on a separate page
@@ -29,7 +29,7 @@ Your users should be able to:
 
 - Vite <a href="https://vitejs.dev/guide/" rel="noopener noreferrer">Docs</a>;
 - React <a href="https://reactjs.org/docs/getting-started.html" rel="noopener noreferrer">Docs</a>;
-- styled-components <a href="https://styled-components.com/docs" target="_blank" rel="noopener noreferrer">Docs</a>
+- Styled-components <a href="https://styled-components.com/docs" target="_blank" rel="noopener noreferrer">Docs</a>
 
 ## The design
 
