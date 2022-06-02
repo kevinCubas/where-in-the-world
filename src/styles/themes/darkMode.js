@@ -1,5 +1,3 @@
-import light from '../../assets/light-mode.svg'
-
 export const darkMode = {
   displayTitle: 'Light mode',
   colors: {
@@ -7,5 +5,5 @@ export const darkMode = {
     nav: 'hsl(209, 23%, 22%)',
     text: 'hsl(0, 0%, 100%)'
   },
-  icon: light
+  icon: 'light_mode'
 }

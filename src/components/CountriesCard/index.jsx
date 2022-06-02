@@ -1,10 +1,10 @@
 import { CountryCard, CountryInfo, FlagContainer } from "./style";
 
-export function CountriesCard({ id, name, flags, population, region, capital }) {
+export function CountriesCard({ id, name, flags, population, region, capital }) {  
   return (
     <CountryCard key={id}>
       <FlagContainer>
-        <img src={flags} alt={name + "country flag"} />
+        <img src={flags} alt={name + "country flag"} loading="lazy"/>
       </FlagContainer>
       <CountryInfo>
         <h2>{name}</h2>

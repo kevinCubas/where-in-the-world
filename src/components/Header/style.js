@@ -26,21 +26,19 @@ export const Button = styled.button`
   border: none;
   outline: none;
   background: none;
-  text-align: center;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   font-weight: 600;
   color: ${({ theme }) => theme.colors.text};
-  img {
+  i {
     margin-right: 3px;
-    width: 1.2rem;
+    font-size: 1rem;
   }
 
   @media (max-width: 375px) {
-    font-size: 12px;
-    img {
-      width: 14px;
+    font-size: 10px;
+    i {
+      font-size: 14px;
     }
   }
 `

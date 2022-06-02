@@ -7,7 +7,7 @@ export function Navigation({ click }) {
   return (
     <Nav>
       <h1>Where in the World?</h1>
-      <Button onClick={() => click()} ><img src={icon} alt="Icon" />{displayTitle}</Button>
+      <Button onClick={() => click()} ><i className="material-symbols-outlined">{icon}</i>{displayTitle}</Button>
     </Nav>
   )
 }
