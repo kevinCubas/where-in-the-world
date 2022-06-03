@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { InputContainer, InputSearch } from "./style";
 
-
-export function SearchInput({search, value}) {
-  return (
+export function SearchInput() {
+  const [searchName, setSearchName] = useState("")
+  return {
+    searchName,
+    renderInput:(
     <InputContainer>
       <i className="material-symbols-outlined">search</i>
-      <InputSearch onChange={search} value={value}/>
+      <InputSearch onChange={(e) => setSearchName(e.target.value)} value={searchName}/>
     </InputContainer>
-  )
+  )}
 }

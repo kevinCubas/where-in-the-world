@@ -30,6 +30,7 @@ Your users should be able to:
 - Vite <a href="https://vitejs.dev/guide/" rel="noopener noreferrer">Docs</a>;
 - React <a href="https://reactjs.org/docs/getting-started.html" rel="noopener noreferrer">Docs</a>;
 - Styled-components <a href="https://styled-components.com/docs" target="_blank" rel="noopener noreferrer">Docs</a>
+- React-Select <a href="https://react-select.com/home" rel="noopener noreferrer">Docs</a>
 
 ## The design
 
