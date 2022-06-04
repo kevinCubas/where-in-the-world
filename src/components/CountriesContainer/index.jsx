@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { baseURL } from "../../baseURL";
 import { useFetch } from "../../hooks/useFetch";
 import { CountriesCard } from "../CountriesCard";
@@ -7,8 +8,22 @@ import { Container, DisplayCardsContainer, SearchFieldsContainer } from "./style
 
 export function CountriesContainer() {
   const { countriesData, error, isFetching } = useFetch(baseURL)
+  const {renderFilterByRegion, selectedRegion} = FilterOption()
   const {renderInput, searchName} = SearchInput()
-  const {renderFilterByRegion} = FilterOption()
+  const [countries, setCountries] = useState()
+
+  async function filterCountries(arr) {
+    if(selectedRegion === "" || selectedRegion === "All") {
+      setCountries(arr)
+  } else {
+      const countryByRegion = arr.filter(country => country.region.includes(selectedRegion))
+      setCountries(countryByRegion)
+    }
+  }
+
+  useEffect(() => {
+    filterCountries(countriesData)
+  }, [countriesData, selectedRegion])
   return (
     <Container>
       <SearchFieldsContainer>
@@ -18,7 +33,7 @@ export function CountriesContainer() {
       <DisplayCardsContainer>
       {isFetching ? 
         <h1>Loading</h1> 
-        : countriesData.filter(country => {
+        : countries.filter(country => {
           return country.name.common.toLowerCase().includes(searchName.toLowerCase())
         }).map((country) => {
           return (

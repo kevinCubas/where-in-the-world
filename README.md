@@ -19,8 +19,8 @@ Your users should be able to:
 
 - [x] See all countries from the API on the homepage
 - [x] Search for a country using an `input` field
-- [ ] Filter countries by region
-- [ ] Click on a country to see more detailed information on a separate page
+- [x] Filter countries by region
+- [] Click on a country to see more detailed information on a separate page
 - [x] Toggle the color scheme between light and dark mode
 
 ## 💻 Project
@@ -54,17 +54,12 @@ The designs were created to the following widths:
 
 ### Typography
 
-#### Body Copy
-
-- Homepage Items: 14px
-- Detail Page: 16px
-
 ### Fonts
 
 - Family: [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans)
 - Weights: 300, 600, 800
 
-#### Icons
+### Icons
 
 For the icons, you can use a font icon library.
 
