@@ -6,6 +6,12 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Nunito Sans', sans-serif;
   }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   body {
     background-color: ${({ theme }) => theme.colors.background};
     height: 100vh;

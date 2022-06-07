@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { baseURL } from "../../baseURL";
 import { useFetch } from "../../hooks/useFetch";
 import { CountriesCard } from "../CountriesCard";
@@ -7,12 +8,12 @@ import { SearchInput } from "../SearchInput";
 import { Container, DisplayCardsContainer, SearchFieldsContainer } from "./style";
 
 export function CountriesContainer() {
-  const { countriesData, error, isFetching } = useFetch(baseURL)
+  const { countriesData, error, isFetching } = useFetch(`${baseURL}/all`)
   const {renderFilterByRegion, selectedRegion} = FilterOption()
   const {renderInput, searchName} = SearchInput()
   const [countries, setCountries] = useState()
 
-  async function filterCountries(arr) {
+  function filterCountries(arr) {
     if(selectedRegion === "" || selectedRegion === "All") {
       setCountries(arr)
   } else {
@@ -23,7 +24,7 @@ export function CountriesContainer() {
 
   useEffect(() => {
     filterCountries(countriesData)
-  }, [countriesData, selectedRegion])
+  }, [isFetching, selectedRegion])
   return (
     <Container>
       <SearchFieldsContainer>
@@ -34,17 +35,18 @@ export function CountriesContainer() {
       {isFetching ? 
         <h1>Loading</h1> 
         : countries.filter(country => {
-          return country.name.common.toLowerCase().includes(searchName.toLowerCase())
+          return country.name.toLowerCase().includes(searchName.toLowerCase())
         }).map((country) => {
+          const {name, flags, population, region, capital} = country
           return (
-            <CountriesCard key={country.name.official} 
-              id={country.name.official}
-              name={country.name.common} 
-              flags={country.flags.svg}
-              population={country.population}
-              region={country.region}
-              capital={country.capital}
-            />
+              <CountriesCard key={name} 
+                id={name}
+                name={name} 
+                flags={flags.svg}
+                population={population}
+                region={region}
+                capital={capital}
+              />
             )
           })
       }
