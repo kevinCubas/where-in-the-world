@@ -4,18 +4,23 @@ export function useFetch(url) {
   const [countriesData, setCountriesData] = useState([])
   const [isFetching, setIsFetching] = useState(true)
   const [error, setError] = useState(null)
+  const callAPI = async () => {
+    try {
+      const response = await fetch(url)
+      if (!response.ok)
+        throw new Error(
+          `Something went wrong: ${response.status} ${response.statusText}`
+        )
+      const data = await response.json()
+      setCountriesData(data)
+      setIsFetching(false)
+    } catch (err) {
+      setError(err.message)
+      setIsFetching(false)
+    }
+  }
   useEffect(() => {
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        setCountriesData(data)
-      })
-      .catch(err => {
-        setError(err)
-      })
-      .finally(() => {
-        setIsFetching(false)
-      })
+    callAPI()
   }, [])
   return { countriesData, error, isFetching }
 }

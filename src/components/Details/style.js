@@ -101,6 +101,18 @@ export const Border = styled.span`
 `
 export const BackButton = styled.button`
   margin-bottom: 3rem;
+  cursor: pointer;
+  background-color: ${({ theme }) => theme.colors.nav};
+  color: ${({ theme }) => theme.colors.spanText};
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  outline: none;
+  border: none;
+  padding: 0.25rem 1rem;
+  width: fit-content;
+  &:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
   i {
     margin-right: 3px;
     font-size: 1rem;

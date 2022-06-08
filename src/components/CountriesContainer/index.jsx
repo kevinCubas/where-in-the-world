@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { baseURL } from "../../baseURL";
 import { useFetch } from "../../hooks/useFetch";
 import { CountriesCard } from "../CountriesCard";
@@ -11,7 +10,7 @@ export function CountriesContainer() {
   const { countriesData, error, isFetching } = useFetch(`${baseURL}/all`)
   const {renderFilterByRegion, selectedRegion} = FilterOption()
   const {renderInput, searchName} = SearchInput()
-  const [countries, setCountries] = useState()
+  const [countries, setCountries] = useState(() => [])
 
   function filterCountries(arr) {
     if(selectedRegion === "" || selectedRegion === "All") {
@@ -32,16 +31,18 @@ export function CountriesContainer() {
         {renderFilterByRegion}
       </SearchFieldsContainer>
       <DisplayCardsContainer>
-      {isFetching ? 
-        <h1>Loading</h1> 
-        : countries.filter(country => {
+      {isFetching && 
+        <h1 style={{display: "flex", justifyContent: "center"}}>Loading...</h1> 
+      }
+      {error && <h2>{error}</h2>}
+        {!isFetching && countries?.filter(country => {
           return country.name.toLowerCase().includes(searchName.toLowerCase())
         }).map((country) => {
           const {name, flags, population, region, capital} = country
           return (
-              <CountriesCard key={name} 
+              <CountriesCard key={name}
                 id={name}
-                name={name} 
+                name={name}
                 flags={flags.svg}
                 population={population}
                 region={region}

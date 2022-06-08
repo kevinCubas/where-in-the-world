@@ -8,8 +8,10 @@ export function CountryDetails() {
   const {countriesData, error, isFetching} = useFetch(`${baseURL}/name/${countryname}?fullText=true`)
   return (
     <>
-    {isFetching ? <h1>loading</h1> : 
-    countriesData.map((country) => {
+    {isFetching && <h1 style={{display: "flex", justifyContent: "center"}}>Loading...</h1>}
+    { error && <p>{error}</p>}
+    {!isFetching && 
+    countriesData?.map((country) => {
       const {name, 
         nativeName, 
         flags, 
