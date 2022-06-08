@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Details } from "../components/Details";
 import { useFetch } from "../hooks/useFetch";
 import {baseURL} from "../baseURL"
@@ -6,12 +6,10 @@ import {baseURL} from "../baseURL"
 export function CountryDetails() {
   const {countryname} = useParams()
   const {countriesData, error, isFetching} = useFetch(`${baseURL}/name/${countryname}?fullText=true`)
-  const navigate = useNavigate();
   return (
     <>
-    <button onClick={() => navigate("/")}>back</button>
     {isFetching ? <h1>loading</h1> : 
-    countriesData.map(country => {
+    countriesData.map((country) => {
       const {name, 
         nativeName, 
         flags, 
@@ -20,8 +18,20 @@ export function CountryDetails() {
         capital, 
         subregion, 
         topLevelDomain,
-        currencies,
-        languages} = country
+      } = country
+      let languagesArr = []
+      let currenciesArr = []
+      let bordersArr = []
+
+      country.languages?.forEach(language => {
+        languagesArr.push(language.name)
+      })
+      country.currencies?.forEach(currency => {
+        currenciesArr.push(currency.name)
+      })
+      country.borders?.forEach(border => {
+        bordersArr.push(border)
+      })
       return (
         <Details 
         key={name} 
@@ -30,9 +40,12 @@ export function CountryDetails() {
         native={nativeName} 
         population={population}
         region={region}
-        capital={capital}
         subRegion={subregion}
+        capital={capital}
         topleveldomain={topLevelDomain}
+        currencies={currenciesArr}
+        languages={languagesArr}
+        borders={bordersArr}
         />
       )
     })}

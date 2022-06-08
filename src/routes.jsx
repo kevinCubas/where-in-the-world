@@ -6,7 +6,7 @@ export default function MainRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/:countryname" element={<CountryDetails />} />
+      <Route path="/details/:countryname" element={<CountryDetails />} />
     </Routes>
   )
 }

@@ -35,4 +35,8 @@ export const CountryInfo = styled.div`
     padding-top: 0.25rem;
     list-style: none;
   }
+
+  span {
+    color: ${({ theme }) => theme.colors.spanText};
+  }
 `

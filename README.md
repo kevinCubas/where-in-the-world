@@ -1,6 +1,6 @@
 # REST Countries API with color theme switcher
 
-Frontend Mentor Chalenge
+Frontend Mentor Challenge
 
 ## React App created with Vite ⚡
 
@@ -20,7 +20,7 @@ Your users should be able to:
 - [x] See all countries from the API on the homepage
 - [x] Search for a country using an `input` field
 - [x] Filter countries by region
-- [] Click on a country to see more detailed information on a separate page
+- [x] Click on a country to see more detailed information on a separate page
 - [x] Toggle the color scheme between light and dark mode
 
 ## 💻 Project
@@ -31,28 +31,13 @@ Your users should be able to:
 - React <a href="https://reactjs.org/docs/getting-started.html" rel="noopener noreferrer">Docs</a>;
 - Styled-components <a href="https://styled-components.com/docs" target="_blank" rel="noopener noreferrer">Docs</a>
 - React-Select <a href="https://react-select.com/home" rel="noopener noreferrer">Docs</a>
+- React-Router <a href="https://reactrouter.com/" rel="noopener noreferrer">Docs</a>
 
 ## The design
 
 The designs were in JPG static format. I have to to use my judgment for styles such as `font-size`, `padding` and `margin`.
 
 ## Layout
-
-The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px
-
-### Colors
-
-- Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
-- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
-- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
-- Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
-- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
-- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
-
-### Typography
 
 ### Fonts
 
