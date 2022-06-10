@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { BackButton, 
+import { Button, 
   Border, 
   BorderContainer, 
   CountryDetail, 
@@ -29,8 +29,8 @@ export function Details(props) {
   return (
     <CountryDetail>
       <ImageAndBackButtonContainer>      
-        <BackButton className="backButton" onClick={() => navigate("/")}>
-        <i className="material-symbols-outlined">arrow_back</i>Back</BackButton>
+        <Button className="backButton" onClick={() => navigate("/")}>
+        <i className="material-symbols-outlined">arrow_back</i>Back</Button>
         <img src={flag} alt={`${officialName} flag`} />
       </ImageAndBackButtonContainer>
       <DetailsContainer>
@@ -80,7 +80,7 @@ export function Details(props) {
         </InformationContainer>
         <BorderContainer>
           {borders.length > 0 ? (
-            <p>Border Countries: <Border>{borders.map(border => <button key={border}>{border}</button>)}</Border></p>
+            <p>Border Countries: <Border>{borders.map(border => <Button style={{cursor:"auto"}} as="span" key={border}>{border}</Button>)}</Border></p>
           ) : <p>Border Countries: None</p>
           }
         </BorderContainer>

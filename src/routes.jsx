@@ -1,5 +1,5 @@
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import { BackButton } from './components/Details/style'
+import { Button } from './components/Details/style'
 import { CountryDetails } from './Pages/CountryDetails'
 import { Home } from './Pages/Home'
 
@@ -13,8 +13,8 @@ export default function MainRoutes() {
       path="*"
       element={
         <main style={{ padding: "1rem" }}>
-          <BackButton className="backButton" onClick={() => navigate("/")}>
-          <i className="material-symbols-outlined">arrow_back</i>Back</BackButton>
+          <Button className="backButton" onClick={() => navigate("/")}>
+          <i className="material-symbols-outlined">arrow_back</i>Back</Button>
           <p>There's nothing here!</p>
         </main>
       }
