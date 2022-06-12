@@ -7,7 +7,7 @@ export function CountriesCard(props) {
     <CountryCard key={id}>
       <Link to={`/details/${name}`}>
         <FlagContainer>
-          <img src={flags} alt={name + "country flag"} loading="lazy"/>
+          <img src={flags} alt={name + "country flag"}/>
         </FlagContainer>
         <CountryInfo>
           <h2>{name}</h2>
