@@ -80,7 +80,7 @@ export function Details(props) {
         </InformationContainer>
         <BorderContainer>
           {borders.length > 0 ? (
-            <p>Border Countries: <Border>{borders.map(border => <Button style={{cursor:"auto"}} as="span" key={border}>{border}</Button>)}</Border></p>
+            <p>Border Countries: <Border>{borders.map(border => <Button style={{cursor:"auto", margin-bottom: 0}} as="span" key={border}>{border}</Button>)}</Border></p>
           ) : <p>Border Countries: None</p>
           }
         </BorderContainer>
